@@ -30,7 +30,7 @@ export class Connection {
     this.stub = new dgraph.DgraphClientStub(
       `${environment.host}:${environment.port}`,
       grpc.credentials.createInsecure(),
-      { 'grpc.max_receive_message_length': 1024 * 1024 * 50, 'grpc.max_send_message_length': 1024 * 1024 * 50 } 
+      { 'grpc.max_receive_message_length': 1024 * 1024 * 100, 'grpc.max_send_message_length': 1024 * 1024 * 100 } 
     )
     this.client = new dgraph.DgraphClient(this.stub)
     this.client.setDebugMode(environment.debug)
